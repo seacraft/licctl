@@ -1,4 +1,4 @@
-# Authorization header checking and adding tools
+# Copyright check and add tools
 
 > English | [中文](README_zh.md)
 
