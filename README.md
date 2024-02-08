@@ -1,5 +1,6 @@
 # Authorization header checking and adding tools
 
+> English | [中文](README_zh.md)
 
 ## Install
 
@@ -42,7 +43,7 @@ Parameter Description：
 - `-v` Print changed files
 - `--skip-dirs` Skip specified folder
 
-## Instructions
+## Getting Started
 
 1. Create copyright header file
 
