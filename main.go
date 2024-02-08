@@ -20,7 +20,6 @@ import (
 	"bytes"
 	"fmt"
 	"html/template"
-	"io/ioutil"
 	"os"
 	"path/filepath"
 	"regexp"
@@ -118,7 +117,7 @@ var patterns = struct {
 var (
 	licenseTemplate = make(map[string]*template.Template)
 	usage           = func() {
-		fmt.Println(helpText)
+		fmt.Println(any(helpText))
 		pflag.PrintDefaults()
 	}
 )
@@ -165,7 +164,7 @@ func main() {
 
 	var t *template.Template
 	if *licensef != "" {
-		d, err := ioutil.ReadFile(*licensef)
+		d, err := os.ReadFile(*licensef)
 		if err != nil {
 			fmt.Printf("license file: %v\n", err)
 			os.Exit(1)
@@ -191,7 +190,7 @@ func main() {
 		for f := range ch {
 			f := f // https://golang.org/doc/faq#closures_and_goroutines
 			wg.Go(func() error {
-				// nolint: nestif
+				//nolint: nestif
 				if *checkonly {
 					// Check if file extension is known
 					lic, err := licenseHeader(f.path, t, data)
@@ -301,7 +300,7 @@ func addLicense(path string, fmode os.FileMode, tmpl *template.Template, data *c
 		return false, err
 	}
 
-	b, err := ioutil.ReadFile(path)
+	b, err := os.ReadFile(path)
 	if err != nil || hasLicense(b) {
 		return false, errors.Wrap(err, "read file failed")
 	}
@@ -317,12 +316,12 @@ func addLicense(path string, fmode os.FileMode, tmpl *template.Template, data *c
 	}
 	b = append(lic, b...)
 
-	return true, ioutil.WriteFile(path, b, fmode)
+	return true, os.WriteFile(path, b, fmode)
 }
 
 // fileHasLicense reports whether the file at path contains a license header.
 func fileHasLicense(path string) (bool, error) {
-	b, err := ioutil.ReadFile(path)
+	b, err := os.ReadFile(path)
 	if err != nil || hasLicense(b) {
 		return false, errors.Wrap(err, "read file failed")
 	}

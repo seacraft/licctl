@@ -20,7 +20,7 @@ test:
 golines.verify:
 ifeq (,$(shell which golines 2>/dev/null))
 	@echo "===========> Installing golines"
-	@$(GO) get -u github.com/segmentio/golines
+	@$(GO) install github.com/segmentio/golines
 endif
 
 ## format: Format the package with `gofmt`
@@ -35,7 +35,7 @@ format: golines.verify
 lint.verify:
 ifeq (,$(shell which golangci-lint 2>/dev/null))
 	@echo "===========> Installing golangci lint"
-	@$(GO) get -u github.com/golangci/golangci-lint/cmd/golangci-lint
+	@$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 endif
 
 ## lint: Check syntax and styling of go sources.
@@ -48,7 +48,7 @@ lint: lint.verify
 updates.verify:
 ifeq (,$(shell which go-mod-outdated 2>/dev/null))
 	@echo "===========> Installing go-mod-outdated"
-	@$(GO) get -u github.com/psampaz/go-mod-outdated
+	@$(GO) install github.com/psampaz/go-mod-outdated
 endif
 
 ## check-updates: Check outdated dependencies of the go projects.

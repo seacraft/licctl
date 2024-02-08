@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-$ go get -u github.com/seacraft/addlicense
+$ go install github.com/seacraft/addlicense
 ```
 
 Help information
