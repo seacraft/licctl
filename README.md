@@ -1,10 +1,10 @@
 # Copyright check and add tools
-[![Go Report Card](https://goreportcard.com/badge/github.com/seacraft/addlicense?)](https://goreportcard.com/report/github.com/seacraft/addlicense)
-[![golangci badge](https://github.com/golangci/golangci-web/blob/master/src/assets/images/badge_a_plus_flat.svg)](https://golangci.com/r/github.com/seacraft/addlicense)
-[![Build Status](https://travis-ci.com/seacraft/addlicense.svg?branch=main)](https://travis-ci.com/seacraft/addlicense)
-[![release](https://img.shields.io/github/release-pre/seacraft/addlicense.svg)](https://github.com/seacraft/addlicense/releases)
+[![Go Report Card](https://goreportcard.com/badge/github.com/seacraft/licctl?)](https://goreportcard.com/report/github.com/seacraft/licctl)
+[![golangci badge](https://github.com/golangci/golangci-web/blob/master/src/assets/images/badge_a_plus_flat.svg)](https://golangci.com/r/github.com/seacraft/licctl)
+[![Build Status](https://travis-ci.com/seacraft/licctl.svg?branch=main)](https://travis-ci.com/seacraft/licctl)
+[![release](https://img.shields.io/github/release-pre/seacraft/licctl.svg)](https://github.com/seacraft/licctl/releases)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/mum4k/termdash/blob/main/LICENSE)
-[![Releases](https://img.shields.io/github/downloads/seacraft/addlicense/total.svg)](https://github.com/seacraft/addlicense/releases)
+[![Releases](https://img.shields.io/github/downloads/seacraft/licctl/total.svg)](https://github.com/seacraft/licctl/releases)
 
 
 > English | [中文](README_zh.md)
@@ -12,14 +12,14 @@
 ## Install
 
 ```bash
-$ go install github.com/seacraft/addlicense
+$ go install github.com/seacraft/licctl
 ```
 
 Help information
 
 ```bash
-$ addlicense -h
-Usage: addlicense [flags] pattern [pattern ...]
+$ licctl -h
+Usage: licctl [flags] pattern [pattern ...]
 
 The program ensures source code files have copyright license headers
 by scanning directory patterns recursively.
@@ -74,11 +74,11 @@ $ cat ./boilerplate.txt
 2. Check whether the file contains the copyright header
 
 ```bash
-$ addlicense --check -f ./boilerplate.txt . --skip-dirs=third_party
+$ licctl --check -f ./boilerplate.txt . --skip-dirs=third_party
 ```
 
 3. Add copyright header to files missing copyright header
 
 ```bash
-$ addlicense -v -f ./boilerplate.txt . --skip-dirs=third_party
+$ licctl -v -f ./boilerplate.txt . --skip-dirs=third_party
 ```

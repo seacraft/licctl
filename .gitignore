@@ -334,7 +334,7 @@ flycheck_*.el
 # Output of backend and frontend
 /_output
 /_debug
-addlicense
+licctl
 
 # Misc
 .DS_Store

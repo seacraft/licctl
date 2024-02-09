@@ -32,7 +32,7 @@ import (
 	"golang.org/x/sync/errgroup"
 )
 
-const helpText = `Usage: addlicense [flags] pattern [pattern ...]
+const helpText = `Usage: licctl [flags] pattern [pattern ...]
 
 The program ensures source code files have copyright license headers
 by scanning directory patterns recursively.
@@ -218,7 +218,7 @@ func main() {
 						return errors.New("missing license header")
 					}
 				} else {
-					modified, err := addLicense(f.path, f.mode, t, data)
+					modified, err := addlicense(f.path, f.mode, t, data)
 					if err != nil {
 						fmt.Printf("%s: %v\n", f.path, err)
 
@@ -295,7 +295,7 @@ func walk(ch chan<- *file, start string) {
 	})
 }
 
-func addLicense(path string, fmode os.FileMode, tmpl *template.Template, data *copyrightData) (bool, error) {
+func addlicense(path string, fmode os.FileMode, tmpl *template.Template, data *copyrightData) (bool, error) {
 	var lic []byte
 	var err error
 	lic, err = licenseHeader(path, tmpl, data)

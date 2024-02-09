@@ -1,4 +1,4 @@
-module github.com/seacraft/addlicense
+module github.com/seacraft/licctl
 
 go 1.21
 

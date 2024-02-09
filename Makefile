@@ -1,5 +1,5 @@
 GO := go
-ROOT_PACKAGE := github.com/seacraft/addlicense
+ROOT_PACKAGE := github.com/seacraft/licctl
 ifeq ($(origin ROOT_DIR),undefined)
 ROOT_DIR := $(shell pwd)
 endif
