@@ -33,6 +33,7 @@ jobs:
           git diff --exit-code go.sum
   test:
     runs-on: ubuntu-latest
+    needs: go-mod
     steps:
       - name: Setup Go
         uses: actions/setup-go@v3
@@ -44,6 +45,7 @@ jobs:
         run: make test
   format:
     runs-on: ubuntu-latest
+    needs: test
     steps:
       - name: Setup Go
         uses: actions/setup-go@v3
@@ -56,6 +58,7 @@ jobs:
           make format
   lint:
     runs-on: ubuntu-latest
+    needs: format
     steps:
       - name: Setup Go
         uses: actions/setup-go@v3
