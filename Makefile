@@ -16,6 +16,13 @@ test:
 	@echo "===========> Testing packages"
 	@$(GO) test $(ROOT_PACKAGE)/...
 
+.PHONY: goimports.verify
+goimports.verify:
+ifeq (,$(shell which goimports 2>/dev/null))
+	@echo "===========> Installing goimports"
+	@$(GO) install golang.org/x/tools/cmd/goimports@v0.17.0
+endif
+
 .PHONY: golines.verify
 golines.verify:
 ifeq (,$(shell which golines 2>/dev/null))
@@ -25,7 +32,7 @@ endif
 
 ## format: Format the package with `gofmt`
 .PHONY: format
-format: golines.verify
+format: golines.verify goimports.verify
 	@echo "===========> Formating codes"
 	@$(FIND) -type f -name '*.go' | $(XARGS) gofmt -s -w
 	@$(FIND) -type f -name '*.go' | $(XARGS) goimports -w -local $(ROOT_PACKAGE)
@@ -35,7 +42,7 @@ format: golines.verify
 lint.verify:
 ifeq (,$(shell which golangci-lint 2>/dev/null))
 	@echo "===========> Installing golangci lint"
-	@$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@1.56.1
+	@$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.56.1
 endif
 
 ## lint: Check syntax and styling of go sources.
