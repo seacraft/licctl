@@ -1,4 +1,4 @@
-# 授权头检查和添加工具
+# 版权许可工具
 [![Go Report Card](https://goreportcard.com/badge/github.com/seacraft/licctl?)](https://goreportcard.com/report/github.com/seacraft/licctl)
 [![golangci badge](https://github.com/golangci/golangci-web/blob/master/src/assets/images/badge_a_plus_flat.svg)](https://golangci.com/r/github.com/seacraft/licctl)
 [![Build Status](https://travis-ci.com/seacraft/licctl.svg?branch=main)](https://travis-ci.com/seacraft/licctl)
