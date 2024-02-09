@@ -20,7 +20,7 @@ test:
 golines.verify:
 ifeq (,$(shell which golines 2>/dev/null))
 	@echo "===========> Installing golines"
-	@$(GO) install github.com/segmentio/golines
+	@$(GO) install github.com/segmentio/golines@v0.12.2
 endif
 
 ## format: Format the package with `gofmt`
@@ -48,7 +48,7 @@ lint: lint.verify
 updates.verify:
 ifeq (,$(shell which go-mod-outdated 2>/dev/null))
 	@echo "===========> Installing go-mod-outdated"
-	@$(GO) install github.com/psampaz/go-mod-outdated
+	@$(GO) install github.com/psampaz/go-mod-outdated@v0.9.0
 endif
 
 ## check-updates: Check outdated dependencies of the go projects.
