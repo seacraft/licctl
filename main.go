@@ -112,7 +112,10 @@ var (
 var patterns = struct {
 	dirs  []*regexp.Regexp
 	files []*regexp.Regexp
-}{}
+}{
+	dirs:  nil,
+	files: nil,
+}
 
 var (
 	licenseTemplate = make(map[string]*template.Template)

@@ -35,7 +35,7 @@ format: golines.verify
 lint.verify:
 ifeq (,$(shell which golangci-lint 2>/dev/null))
 	@echo "===========> Installing golangci lint"
-	@$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+	@$(GO) install github.com/golangci/golangci-lint/cmd/golangci-lint@1.56.1
 endif
 
 ## lint: Check syntax and styling of go sources.

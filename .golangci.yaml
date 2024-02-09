@@ -502,8 +502,8 @@ linters:
   enable:
     - megacheck
     - bodyclose
-    - deadcode
-    - depguard
+#    - deadcode
+#    - depguard
     - dogsled
     - dupl
     - errcheck
@@ -514,7 +514,7 @@ linters:
     - gocyclo
     - gofmt
     - goimports
-    - golint
+#    - golint
     - importas
     - wastedassign
     - nilerr
@@ -528,15 +528,15 @@ linters:
     - nakedret
     - nolintlint
     - rowserrcheck
-    - scopelint
+    - exportloopref
     - staticcheck
-    - structcheck
+#    - structcheck
     - stylecheck
     - typecheck
     - unconvert
     - unparam
     - unused
-    - varcheck
+#    - varcheck
     - whitespace
     - asciicheck
     - gocognit
@@ -547,7 +547,7 @@ linters:
     - gomodguard
     - exhaustive
     - revive
-    - ifshort
+#    - ifshort
     - forbidigo
     - makezero
     - thelper
@@ -556,8 +556,7 @@ linters:
     - durationcheck
     - paralleltest
     - errorlint
-    - exhaustivestruct
-    - exportloopref
+    - exhaustruct
     - gci
     - gofumpt
     - goheader
@@ -577,7 +576,7 @@ linters:
     #- gochecknoglobals
     #- interfacer
     #- maligned
-
+  disable:
 issues:
   # List of regexps of issue texts to exclude, empty list by default.
   # But independently from this option we use default exclude patterns,
