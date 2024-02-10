@@ -12,7 +12,7 @@
 ## Install
 
 ```bash
-$ go install github.com/seacraft/licctl
+$ go install github.com/seacraft/licctl@latest
 ```
 
 Help information
