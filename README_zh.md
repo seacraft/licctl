@@ -12,7 +12,7 @@
 ## 安装
 
 ```bash
-$ go install github.com/seacraft/licctl
+$ go install github.com/seacraft/licctl@latest
 ```
 
 帮助信息为:
