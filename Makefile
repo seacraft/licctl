@@ -5,7 +5,7 @@ ROOT_DIR := $(shell pwd)
 endif
 
 # Linux command settings
-FIND := find . ! -path './third_party/*' ! -path './vendor/*'
+FIND := find .
 XARGS := xargs --no-run-if-empty
 
 all: test format lint
