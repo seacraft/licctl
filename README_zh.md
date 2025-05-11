@@ -15,7 +15,7 @@
 $ go install github.com/seacraft/licctl@latest
 ```
 
-帮助信息为:
+帮助信息:
 
 ```bash
 $ licctl -h
@@ -45,9 +45,9 @@ Flags:
 
 参数说明:
 
-- `--check` 只检查
+- `--check` 仅检查
 - `-f, --licensef` 指定版权头文件
-- `-v` 打印被更改的文件
+- `-v` 打印已更改的文件
 - `--skip-dirs` 跳过指定的文件夹
 
 ## 使用方法
