@@ -7,7 +7,7 @@
 [![Releases](https://img.shields.io/github/downloads/seacraft/licctl/total.svg)](https://github.com/seacraft/licctl/releases)
 
 
-> English | [中文](README_zh.md)
+> English | [简体中文](README_zh.md)
 
 ## Install
 
